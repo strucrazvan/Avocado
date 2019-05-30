@@ -1,0 +1,29 @@
+ConferenceBundle\Entity\Bidding:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\BiddingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        vote:
+            type: integer
+    lifecycleCallbacks: {  }
+    manyToOne:
+        proposal:
+            targetEntity: Proposal
+            inversedBy: bidding
+            joinColumn:
+                name: proposal_id
+                referencedColumnName: id
+            cascade: ["persist"]
+        user:
+            targetEntity: User
+            inversedBy: bidding
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+            cascade: ["persist"]

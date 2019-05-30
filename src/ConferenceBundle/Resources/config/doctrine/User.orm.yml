@@ -1,0 +1,54 @@
+ConferenceBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+            nullable: true
+            column: first_name
+        lastName:
+            type: string
+            length: 255
+            nullable: true
+            column: last_name
+        affiliation:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        token:
+            type: string
+            length: 255
+        webPage:
+            type: string
+            length: 255
+            nullable: true
+            column: web_page
+        username:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
+    oneToMany:
+        proposals:
+            targetEntity: Proposal
+            mappedBy: user
+            cascade: ["persist"]
+        bidding:
+            targetEntity: Bidding
+            mappedBy: user
+            cascade: ["persist"]

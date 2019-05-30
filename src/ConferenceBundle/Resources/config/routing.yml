@@ -1,0 +1,59 @@
+conference_homepage:
+    path:     /
+    defaults: { _controller: ConferenceBundle:Default:index }
+get_user:
+    path:     /getUser/token/{token}/username/{username}
+    defaults: { _controller: ConferenceBundle:User:getUser }
+
+add_new_user:
+    path:     /addNewUser
+    defaults: { _controller: ConferenceBundle:User:addNewUser }
+
+add_new_user:
+    path:     /addProposal
+    defaults: { _controller: ConferenceBundle:Proposal:addProposal }
+
+login_user:
+    path:     /login
+    defaults: { _controller: ConferenceBundle:User:login}
+
+get_user:
+    path:     /getUser
+    defaults: { _controller: ConferenceBundle:User:getUser }
+get_users:
+    path:     /getUsers
+    defaults: { _controller: ConferenceBundle:User:getUsers }
+
+add_proposal:
+    path:     /addProposal
+    defaults: { _controller: ConferenceBundle:Proposal:addProposal }
+add_comitee:
+    path:     /addProgramComitee/id/{id}
+    defaults: { _controller: ConferenceBundle:Proposal:getProgramComitee }
+add_comitee:
+    path:     /get/programComitee
+    defaults: { _controller: ConferenceBundle:Proposal:addProgramComitee }
+
+get_proposal_by_id:
+    path:     /getProposalById/token/{token}/id/{id}
+    defaults: { _controller: ConferenceBundle:Proposal:getProposalById }
+
+get_proposals:
+    path:     /getProposals
+    defaults: { _controller: ConferenceBundle:Proposal:getProposals }
+get_conferences:
+    path:     /getConferences
+    defaults: { _controller: ConferenceBundle:Conference:getConferences }
+get_conference_by_id:
+    path:     /getConferenceById/id/{id}
+    defaults: { _controller: ConferenceBundle:Conference:getConferenceById }
+get_bidders_yes:
+    path:     /getBidersWithYes/proposalId/{proposalId}
+    defaults: { _controller: ConferenceBundle:Bidding:getBiddersWithYes}
+get_bidders_maybe:
+    path:     /getBidersWithMaybe/proposalId/{proposalId}
+    defaults: { _controller: ConferenceBundle:Bidding:getBiddersWithMaybe}
+
+add_bidding:
+    path:     /addBid
+    defaults: { _controller: ConferenceBundle:Bidding:addBidding }

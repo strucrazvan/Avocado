@@ -1,0 +1,17 @@
+ConferenceBundle\Entity\Sections:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\SectionsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        topic:
+            type: string
+            length: 255
+            unique: true
+
+    lifecycleCallbacks: {  }

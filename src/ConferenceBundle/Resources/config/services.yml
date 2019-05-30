@@ -1,0 +1,4 @@
+services:
+#    conference.example:
+#        class: ConferenceBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,48 @@
+ConferenceBundle\Entity\Proposal:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\ProposalRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        keywords:
+            type: text
+        text:
+            type: text
+        finalPaper:
+            type: string
+            length: 255
+            nullable: true
+            column: final_paper
+        accepted:
+            type: boolean
+        type:
+            type: boolean
+    lifecycleCallbacks: {  }
+    manyToOne:
+        conference:
+            targetEntity: Conference
+            inversedBy: proposals
+            joinColumn:
+                name: conference_id
+                referencedColumnName: id
+            cascade: ["persist"]
+        user:
+            targetEntity: User
+            inversedBy: proposals
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+            cascade: ["persist"]
+    oneToMany:
+        bidding:
+            targetEntity: Bidding
+            mappedBy: proposal
+            cascade: ["persist"]

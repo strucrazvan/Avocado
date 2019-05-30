@@ -1,0 +1,17 @@
+ConferenceBundle\Entity\Evaluate:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\EvaluateRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        grade:
+            type: integer
+        recommendations:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

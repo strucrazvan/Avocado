@@ -1,0 +1,38 @@
+ConferenceBundle\Entity\Conference:
+    type: entity
+    table: null
+    repositoryClass: ConferenceBundle\Repository\ConferenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        startDate:
+            type: datetime
+            column: start_date
+        endDate:
+            type: datetime
+            column: end_date
+        callForPapers:
+            type: text
+            nullable: true
+            column: call_for_papers
+        abstractDeadline:
+            type: datetime
+            nullable: true
+            column: abstract_deadline
+        proposalDeadline:
+            type: datetime
+            nullable: true
+            column: proposal_deadline
+    lifecycleCallbacks: {  }
+    oneToMany:
+        proposalsC:
+            targetEntity: Proposal
+            mappedBy: conference
+            cascade: ["persist"]
